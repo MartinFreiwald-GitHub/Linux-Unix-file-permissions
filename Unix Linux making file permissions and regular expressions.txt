@@ -1,0 +1,99 @@
+ 
+
+ 
+(web article, https://www.tutorialspoint.com/unix/unix-file-permission.htm).
+
+Above is a chart to decode the file permissions and chmod number.
+
+Rwxr-xr – Means “sets permissions so that, (U)ser / owner can read, can write and can execute.  (G)roup can read, can’t write and can execute.  (0)thers can read, can’t write and can’t execute” (Web Article, https://chmodcommand.com/chmod-754/).
+
+To make this file permission with chmod below.
+
+chmod 754 install.sh
+or
+chmod a+rwx,g-w,o-wx install.sh
+------------------------------------------------------------------------------------
+-rw-r--r--  Means, “sets permissions so that, (U)ser / owner can read, can write and can’t execute.  (G)roup can read, can’t write and can’t execute.  (O)thers can read, can’t write and can’t execute” (Web Article, https://chmodcommand.com/chmod-644/).
+
+To make this file permission with chmod below.
+
+chmod 644 Admin_Guide.txt
+or 
+chmod a+rwx,u-x,g-wx,o-wx Admin_Guide.txt
+--------------------------------------------------------------------------------------
+-rw-r-----  Means, “ “sets permissions so that, (U)ser / owner can read, can write and can’t execute.  (G)roup can read, can’t write and can’t execute.  (O)thers can’t read, can’t write and can’t execute” (Web Article, https://chmodcommand.com/chmod-640/).
+To make this file permission with chmod below.
+
+chmod 640 User-Guide.txt
+or
+chmod a+rwx,u-x,g-wx,o-rwx User-Guide.txt
+
+------------------------------------------------------------------------------------
+
+Drwxr-xr-x  Means, “sets permissions so that, (U)ser / owner can read, can write and can execute.  (G)roup can read, can’t write and can execute.  (O)thers can read, can’t write and can execute”(Web Article, https://chmodcommand.com/chmod-755/)
+
+Chmod 755 Documents
+Or 
+Chmod a+rwx,g-w,o-w Documents
+
+The D to start means Directory Access Modes.  Explained here.  
+“Directory Access Modes
+Directory access modes are listed and organized in the same manner as any other file.  There are a few differences that need to be mentioned.
+READ 
+Access to a directory means that the use can read the contents.  The user can look at the filenames inside the directory.
+WRITE
+Acess means that the user can add or delete files from the directory.
+EXECUTE 
+Executing a directory doen’t really make sense, so think of this as a traverse permission.  A user must have execute access to the bin directory in order to execute the ls or the cd command” (Web Article, https://www.tutorialspoint.com/unix/unix-file-permission.htm).
+------------------------------------------------------------------------------------.
+
+-rwsr-sr-x  Means, “sets permissions so that, (U)ser / owner can read, can write and can execute.  (G)roup can read, can’t write and can execute.  (O)thers can read, can’t write and can execute”(Web Article, https://chmodcommand.com/chmod-6755/).
+
+Chmod 6755 httpd
+Or 
+Chmod a+rwx,g-w,o-w,ug+s,+t,-t httpd
+----------------------------------------------------------------------------------.
+
+The Astrict * .  * is a character that means “Matches zero or more occurrances of a match of the preceding character” (Prentice Hall , Sorbell Mark, 2013 ; A Practical Guide to Linux Commands, Editors , and Shell Programming).  This is a special character.
+
+The Question mark ? .  ? is a character that means “Matches zero or one occurrence of the preceding character” (Sorbell, 2013).  ? question mark is an Extended regular expression.  This is a special character.
+
+The break ^ character.  ^ Break character means “Forces a match to the beginning of a line” (Sorbell, 2013).  This is a special character.
+
+The dollar $ character.  $ dollar character means “A match to the end of the line” (Sorbell, 2013).   This is a special character.
+
+[0-9] is a regular expression.  [0-9] means matches any of the numbers, except 0-9. This is an character class and bracketed regular express. (Sorbell, 2013).   
+
+[a-z] is a regular expression.  [a-z] means mathes any of the characters, except letters a through z.  This is an character class and bracketed regular express. (Sorbell, 2013).   
+ 
+3.  Give a regular expression to match the following:
+* All files that end in txt 
+ls *.txt
+
+
+* Files that have a second character of a and end in sh
+Ls ?a*
+
+* Any file that starts with a number
+Ls [0-9]*
+
+* A blank line
+Ls \s*
+
+* A traditional 10-digit U.S.- based phone number in the following format: (407)555-1212
+Original file content, file.txt:  (407)555-1212
+
+grep -E '^([0-9]{3}-|\([0-9]{3}\) )[0-9]{3}-[0-9]{4}$' file.txt
+ 
+ 
+
+
+
+------------------------------------------------------------------------------
+
+
+ 
+
+Describe the requirements for selecting, developing and implementing disaster and continuity plans.
+Identify and explain physical security risks, threats and countermeasures.
+
